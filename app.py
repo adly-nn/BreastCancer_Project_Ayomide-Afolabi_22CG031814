@@ -14,9 +14,9 @@ def load_resources():
     try:
         # Load both model and scaler
         # Check standard path and 'model' subfolder path just in case
-        if os.path.exists('model/cancer_model.pkl'):
-            model = joblib.load('model/cancer_model.pkl')
-            scaler = joblib.load('model/scaler.pkl')
+        if os.path.exists('cancer_model.pkl'):
+            model = joblib.load('cancer_model.pkl')
+            scaler = joblib.load('scaler.pkl')
         else:
             model = joblib.load('cancer_model.pkl')
             scaler = joblib.load('scaler.pkl')
@@ -98,4 +98,5 @@ if st.button("Analyze Tumor", type="primary"):
         st.warning("The features indicate a high probability of malignancy.")
     else:
         st.success("### Prediction: BENIGN")
+
         st.info("The features indicate the tumor is likely benign.")
